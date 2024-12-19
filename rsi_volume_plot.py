@@ -2,6 +2,7 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 def calculate_rsi(price_series, period):
     if period <= 0:
@@ -74,10 +75,18 @@ def plot_price_volume_rsi():
         
         # Calculate RSI and weighted RSI
         rsi_data = weighted_rsi(stock_data, valid_periods)
+
+        # Generate current date and time for the title
+        now = datetime.now()
+        formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
         
         # Create subplots
         fig, axs = plt.subplots(3, 1, sharex=True, figsize=(12, 15))
-        fig.suptitle(f'{stock_ticker} - Price, Volume, RSI Analysis', fontsize=16)
+        #fig.suptitle(f'{stock_ticker} - Price, Volume, RSI Analysis', fontsize=16)
+        
+        # Add date and time to the title
+        fig.suptitle(f'Nanofilm(MZH.SI) - Price, Volume, RSI Analysis - Generated: {formatted_time}', fontsize=16)
+        
         
         # Plot Price
         axs[0].plot(stock_data.index, stock_data['Close'], color='blue', label='Close Price')
