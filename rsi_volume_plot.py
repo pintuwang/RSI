@@ -136,7 +136,8 @@ def plot_price_volume_rsi():
         # debug
         import os
         plt.show()
-        plt.savefig('MZH_Chart.png')
+        plt.savefig('MZH_Chart.jpg', format='jpg', dpi=300, bbox_inches='tight')
+        ##plt.savefig('MZH_Chart.png')
         plt.close()
         print(os.path.exists('MZH_Chart.png'))  # Should print True if the file exists
         print(os.path.abspath('MZH_Chart.png'))  # Shows the absolute path of where the file should be
