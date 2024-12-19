@@ -1,0 +1,5 @@
+- name: Run script
+  run: |
+    pwd
+    python rsi_volume_plot.py
+    ls -l MZH_Chart.png || echo "File not found"
