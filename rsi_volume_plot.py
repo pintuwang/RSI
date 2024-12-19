@@ -131,6 +131,13 @@ def plot_price_volume_rsi():
         # Save the chart instead of showing it
         plt.savefig('MZH_Chart.png')
         plt.close()  # Close the plot to free up memory
+
+        # debug
+        import os
+        plt.savefig('MZH_Chart.png')
+        plt.close()
+        print(os.path.exists('MZH_Chart.png'))  # Should print True if the file exists
+        print(os.path.abspath('MZH_Chart.png'))  # Shows the absolute path of where the file should be
     
     except Exception as e:
         import traceback
