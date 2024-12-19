@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
+from pytz import timezone
 
 def calculate_rsi(price_series, period):
     if period <= 0:
@@ -75,9 +76,10 @@ def plot_price_volume_rsi():
         
         # Calculate RSI and weighted RSI
         rsi_data = weighted_rsi(stock_data, valid_periods)
-
-        # Generate current date and time for the title
-        now = datetime.now()
+             
+        # Generate current date and time in Singapore timezone
+        singapore_timezone = timezone('Asia/Singapore')
+        now = datetime.now(singapore_timezone)
         formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
         
         # Create subplots
@@ -85,7 +87,7 @@ def plot_price_volume_rsi():
         #fig.suptitle(f'{stock_ticker} - Price, Volume, RSI Analysis', fontsize=16)
         
         # Add date and time to the title
-        fig.suptitle(f'Nanofilm(MZH.SI) - Price, Volume, RSI Analysis - Generated: {formatted_time}', fontsize=16)
+        fig.suptitle(f'Nanofilm(MZH.SI) - Price, Volume, RSI Analysis - Generated(SG Time): {formatted_time}', fontsize=16)
         
         
         # Plot Price
