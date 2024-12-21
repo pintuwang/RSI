@@ -1,1 +1,28 @@
-<html><body><img src='MZH_Chart.jpg' alt='Daily Chart'></body></html>
+<html>
+  <head>
+    <style>
+      /* Make the image responsive */
+      img {
+        width: 100%; /* Take up 100% of the container width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Prevent stretching beyond the original image size */
+        display: block; /* Remove any bottom space caused by inline-block */
+        margin: 0 auto; /* Center the image */
+      }
+
+      /* Optional: If you want to add a lightbox effect to expand the image */
+      .expandable {
+        cursor: pointer;
+      }
+
+      /* Optionally add a little padding for visual comfort */
+      body {
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="expandable" src="MZH_Chart.jpg" alt="Daily Chart" onclick="window.open(this.src)">
+  </body>
+</html>
