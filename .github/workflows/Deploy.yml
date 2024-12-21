@@ -1,4 +1,4 @@
-name: Daily Chart Update
+name: Deploy
 on:
   schedule:
     - cron: '0 18 * * *'  # Fixed cron syntax
